@@ -28,6 +28,25 @@
   color: #61dafb;
 }
 
+.app {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
+  max-width: 800px;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+}
+
+textarea {
+  width: 100%;
+  box-sizing: border-box;
+}
+
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

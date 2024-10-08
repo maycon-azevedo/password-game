@@ -1,0 +1,24 @@
+.victory-popup {
+    position: fixed; /* Fica fixo na tela */
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Fundo semitransparente */
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente */
+    align-items: center; /* Centraliza verticalmente */
+    z-index: 1000; /* Garante que o modal fique acima de outros elementos */
+}
+
+.victory-popup-content {
+    background-color: white; /* Fundo branco para o conteúdo do modal */
+    padding: 20px; /* Espaçamento interno */
+    border-radius: 8px; /* Bordas arredondadas */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* Sombra para dar destaque */
+    text-align: center; /* Centraliza o texto */
+}
+
+.victory-popup-content button {
+    margin-top: 10px; /* Espaço acima do botão */
+}
