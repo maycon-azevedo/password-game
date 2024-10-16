@@ -18,7 +18,7 @@ const rules = [
   "Os numerais romanos na sua senha devem ser múltiplos de 35.",
   "Sua senha deve incluir um símbolo de dois caracteres da tabela periódica.",
   "Os elementos na sua senha devem ter números atômicos que somam 200.",
-  "Sua senha deve conter uma das seguintes afirmações: Eu sou amado | Eu sou digno | Eu sou suficiente",
+  "Sua senha deve conter uma das seguintes afirmações: Eusouamado| Eusoudigno | Eusousuficiente",
   // Adicione as outras regras aqui
 ];
 
@@ -118,9 +118,13 @@ const App = () => {
 
       // Se a regra atual foi cumprida, desbloquear a próxima regra
       if (newRules[currentRuleIndex].fulfilled && currentRuleIndex < rules.length - 1) {
-        setUnlockedRules((prev) => [...prev, { text: rules[currentRuleIndex + 1], fulfilled: false }]);
+        setUnlockedRules((prev) => [
+          ...prev.map((rule, idx) => idx === currentRuleIndex ? { ...rule, fulfilled: true } : rule), 
+          { text: rules[currentRuleIndex + 1], fulfilled: false } // A nova regra começa como não cumprida
+        ]);
         setCurrentRuleIndex((prev) => prev + 1);
       }
+      
 
     };
 
